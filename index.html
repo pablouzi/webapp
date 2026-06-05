@@ -36,7 +36,7 @@
           src="#avatarModel" 
           position="0 0 0" 
           scale="0.5 0.5 0.5" 
-          animation-mixer="clip: girar; loop: repeat; timeScale: 1;">
+          animation-mixer="clip: hoja, hoja1, hoja2 , hoja3; loop: repeat; timeScale: 1;">
           <!-- animation-mixer="clip: *; loop: repeat; timeScale: 1;"> -->    
         </a-gltf-model>
       </a-entity>
@@ -59,7 +59,7 @@
         } else {
           // Volvemos a la primera
           modelo.setAttribute('animation-mixer', {
-              clip:'girar',
+              clip:'tapa',
               loop: 'repeat',
               crossFadeDuration: 0.5
             });
