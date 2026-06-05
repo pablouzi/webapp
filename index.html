@@ -51,10 +51,18 @@
       boton.addEventListener('click', () => {
         if (esRotar) {
           // Cambiamos a la segunda animación
-          modelo.setAttribute('animation-mixer', 'clip: mover; loop: repeat;');
+          modelo.setAttribute('animation-mixer', {
+              clip:'mover',
+              loop: 'repeat',
+              crossFadeDuration: 0.5
+            });
         } else {
           // Volvemos a la primera
-          modelo.setAttribute('animation-mixer', 'clip: girar; loop: repeat;');
+          modelo.setAttribute('animation-mixer', {
+              clip:'girar',
+              loop: 'repeat',
+              crossFadeDuration: 0.5
+            });
         }
         esRotar = !esRotar; // Invertimos el estado
       });
