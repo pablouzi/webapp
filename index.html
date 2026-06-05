@@ -6,13 +6,13 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.5.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
-    
+<!-- CREACION DEL BOTON -->
     <div style="position: fixed; bottom: 10px; width: 100%; text-align: center; z-index: 1000;">
       <button id="btnCambiar" style="padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 50px">
         Cambiar Animación
       </button>
     </div>
-    
+<!-- CARGA DE LA IMAGEN TARGET -->
     <a-scene mindar-image="imageTargetSrc: targets/targets.mind;
               maxTrack: 1; 
               uiScanning: #scanning; 
@@ -23,16 +23,14 @@
     renderer="colorManagement: true, physicallyCorrectLights" 
     vr-mode-ui="enabled: false" 
     device-orientation-permission-ui="enabled: false">
-      
+<!-- CARGA DEL MODELO 3D -->
       <a-assets>
-   
         <a-asset-item id="avatarModel" src="assets/cubo.glb"></a-asset-item>
       </a-assets>
-
+ <!-- POSICION INICIO DE LA CAMARA -->
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      
+ <!-- Configuracion del objeto 3d -->      
       <a-entity mindar-image-target="targetIndex: 0">
-      
         <a-gltf-model 
           id="miModelo"
           src="#avatarModel" 
@@ -42,7 +40,7 @@
         </a-gltf-model>
       </a-entity>
     </a-scene>
-
+ <!-- ACCIONES DEL BOTON DE CAMBIO DE ANIMACION -->    
     <script>
       const modelo = document.querySelector('#miModelo');
       const boton = document.querySelector('#btnCambiar');
@@ -68,5 +66,6 @@
         esRotar = !esRotar; // Invertimos el estado
       });
     </script>
+    
   </body>
 </html>
